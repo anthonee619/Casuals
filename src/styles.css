@@ -1,0 +1,13 @@
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', "Lato";
+  margin: 0;
+  padding: 0;
+  background-color: #efefefef;
+  color: #372549;
+  background: url("/assets/homepattern.svg");
+}
