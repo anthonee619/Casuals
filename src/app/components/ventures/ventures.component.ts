@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ventures',
@@ -13,10 +14,11 @@ export class VenturesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
-    if (this.id == 'c') {
-      console.log("hello");
-    }
+    this.id$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+      this.id = params.get('id'))
+    );
+    console.log(this.id);
   }
 
 }
